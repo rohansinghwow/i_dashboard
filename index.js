@@ -54,7 +54,7 @@ setInterval(getCurrentTime, 1000)
 
 setInterval(()=>{
 
-    
+    getCrypto()
     getImages()
 
 }, 12000)
