@@ -16,11 +16,7 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
 
 }
 
- getCrypto()
- getImages()
-
-
- function getCrypto(){
+function getCrypto(){
 
 fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     .then(res => {
@@ -43,21 +39,7 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
 
  }
 
-
-
-function getCurrentTime() {
-    const date = new Date()
-    document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
-}
-
-setInterval(getCurrentTime, 1000)
-
-setInterval(()=>{
-
-    getCrypto()
-    getImages()
-
-}, 12000)
+ function getWeather(){
 
 navigator.geolocation.getCurrentPosition(position => {
     fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
@@ -77,3 +59,40 @@ navigator.geolocation.getCurrentPosition(position => {
         })
         .catch(err => console.error(err))
 });
+
+
+
+}
+
+function getCurrentTime() {
+    const date = new Date()
+    document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
+}
+
+
+
+
+setInterval(getCurrentTime, 1000)
+
+
+setInterval(()=>{
+
+    getCrypto()
+    getImages()
+
+
+}, 12000)
+ 
+
+ getCrypto()
+ getImages()
+ getWeather()
+
+
+
+
+
+
+
+
+
