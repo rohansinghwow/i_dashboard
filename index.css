@@ -28,7 +28,16 @@ div.top {
 }
 
 h1.time {
-    text-align: center;
+ text-align: center;
+padding: 20px 30px;   
+background: rgba(255, 255, 255, 0.21);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.2px);
+-webkit-backdrop-filter: blur(5.2px);
+border: 1px solid rgba(255, 255, 255, 0.32);
+max-width: 220px;
+margin: 0 auto;
 }
 
 div#crypto {
@@ -54,13 +63,22 @@ div#weather {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-self: flex-start;
-    margin-top: -20px;
+    margin-top: 20px;
+    padding: 40px 40px;   
+    background: rgba(255, 255, 255, 0.21);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.2px);
+    -webkit-backdrop-filter: blur(5.2px);
+    border: 1px solid rgba(255, 255, 255, 0.32);
+
 }
 
 div#weather > img {
     width: 70px;
+
 }
 
 p.weather-city {
@@ -75,3 +93,15 @@ p.weather-temp {
     font-size: 1.7rem;
     margin-left: -10px;
 }
+
+#crypto {
+margin-top: 20px;
+padding: 10px 40px;   
+background: rgba(255, 255, 255, 0.21);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.2px);
+-webkit-backdrop-filter: blur(5.2px);
+border: 1px solid rgba(255, 255, 255, 0.32);
+}
+
