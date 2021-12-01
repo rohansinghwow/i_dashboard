@@ -1,3 +1,6 @@
+
+function getImages(){
+
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=space")
     .then(res => res.json())
     .then(data => {
@@ -11,6 +14,14 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
         document.getElementById("author").textContent = `By: Dodi Achmad`
     })
 
+}
+
+ getCrypto()
+ getImages()
+
+
+ function getCrypto(){
+
 fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     .then(res => {
         if (!res.ok) {
@@ -22,14 +33,17 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
         document.getElementById("crypto-top").innerHTML = `
             <img src=${data.image.small} />
             <span>${data.name}</span>
-        `
-        document.getElementById("crypto").innerHTML += `
             <p>🎯: $${data.market_data.current_price.usd}</p>
             <p>👆: $${data.market_data.high_24h.usd}</p>
             <p>👇: $${data.market_data.low_24h.usd}</p>
         `
+        
     })
     .catch(err => console.error(err))
+
+ }
+
+
 
 function getCurrentTime() {
     const date = new Date()
@@ -37,6 +51,13 @@ function getCurrentTime() {
 }
 
 setInterval(getCurrentTime, 1000)
+
+setInterval(()=>{
+
+    
+    getImages()
+
+}, 12000)
 
 navigator.geolocation.getCurrentPosition(position => {
     fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
